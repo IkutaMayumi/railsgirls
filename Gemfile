@@ -5,7 +5,12 @@ gem "rails", "~> 8.1.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 2.1"
+group :development do
+  gem "sqlite3"
+end
+group :production do
+  gem "pg"
+end
 # Use carrierwave for upload pictures
 gem "carrierwave", "~> 3.0"
 # Use the Puma web server [https://github.com/puma/puma]
